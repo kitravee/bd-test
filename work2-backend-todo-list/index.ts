@@ -12,8 +12,12 @@ app.use(bodyParser.json());
 let todos: Todo[] = [];
 let idCounter = 1;
 
-app.get("/", (_req, res) => {
+app.get("/", (_req: Request, res: Response) => {
   res.send("Hello BD!");
+});
+
+app.get('/todos', (_req: Request, res: Response) => {
+  res.json(todos);
 });
 
 const newTodoValidateSchema = createValidateSchema(TodoSchema);
@@ -45,11 +49,10 @@ app.put(
   (req: Request, res: Response) => {
     const todo = todos.find((t) => t.id === parseInt(req.params.id));
     if (todo) {
-      const title = req.body.title
-      const completed = req.body.completed
+      const title = req.body.title;
+      const completed = req.body.completed;
       todo.title = title !== undefined ? title : todo.title;
-      todo.completed =
-        completed !== undefined ? completed : todo.completed;
+      todo.completed = completed !== undefined ? completed : todo.completed;
       res.json(todo);
     } else {
       res.status(404).send("Todo not found");

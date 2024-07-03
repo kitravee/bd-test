@@ -1,4 +1,4 @@
-import { showLongestCommonPrefix } from "./longest-common-prefix";
+import { findLongestCommonPrefix } from "./longest-common-prefix";
 
 export const  runTests = () => {
   interface TestCase {
@@ -17,7 +17,7 @@ export const  runTests = () => {
   ];
 
   testCases.forEach(({ input, expected }, index) => {
-      let result = showLongestCommonPrefix(input);
+      let result = findLongestCommonPrefix(input);
       console.log(`Test case ${index + 1}: ${result === expected ? "Passed" : "Failed"}`);
   });
 }

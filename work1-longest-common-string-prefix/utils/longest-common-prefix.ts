@@ -2,7 +2,7 @@ export const findShortestString = (strs: string[]) => {
   return strs.reduce((a: string, b: string) => (a.length <= b.length ? a : b));
 };
 
-export const showLongestCommonPrefix = (strs: string[]) => {
+export const findLongestCommonPrefix = (strs: string[]) => {
   if (strs.length === 0) return "";
 
   const shortestStr = findShortestString(strs);

@@ -1,0 +1,11 @@
+{
+  "name": "work1-longest-common-string-prefix",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
